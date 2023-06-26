@@ -8,7 +8,7 @@ Diese Seite beinhaltet die Dokumentation für alle API Endpoints. Dazu gehört d
 ### GET `Manga/all`
 
 Dieser Endpoint gibt alle Mangas, die in der Datenbank sind als JSON zurück. Es werden alle Attribute der Manga in der 
-Reihenfolge id, id, name, chapters, finished, no_updates zurückgegeben.
+Reihenfolge id, name, chapters, finished, no_updates zurückgegeben.
     
 
 
