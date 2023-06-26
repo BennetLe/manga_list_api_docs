@@ -8,6 +8,7 @@ nav:
   - 'Endpoints.md'
   - 'Database.md'
   - 'Structs.md'
+  - 'Erarbeitung.md'
 
 theme:
     features:
