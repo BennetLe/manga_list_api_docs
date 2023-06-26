@@ -45,16 +45,6 @@ theme:
       - social
 
 
-    extra:
-      social:
-        - icon: fontawesome/brands/github-alt
-          link: https://github.com/james-willett
-        - icon: fontawesome/brands/twitter
-          link: https://twitter.com/TheJamesWillett
-        - icon: fontawesome/brands/linkedin
-          link: https://www.linkedin.com/in/willettjames/
-
-
 
 markdown_extensions:
   - pymdownx.highlight:
@@ -72,3 +62,8 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
+
+extra:
+  social:
+    - icon: fontawesome/brands/github-alt
+      link: https://github.com/BennetLe
