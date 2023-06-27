@@ -10,7 +10,7 @@ Reihenfolge `id, name, chapters, finished, no_updates` zurückgegeben.
     
 
 
-??? example "Beispiel Rückgabewert"
+??? success "Beispiel Rückgabewert"
 
     ```json
     [
@@ -31,7 +31,7 @@ Reihenfolge `id, name, chapters, finished, no_updates` zurückgegeben.
 Dieser Endpoint erstellt einen neuen Manga in der Datenbank. Dazu benötigt der ausführende Benutzer administrator Rechte. Diese werden bei der Anfrage durch den Session-Cookie
 überprüft.
 
-??? example "Beispiel Übergabewerte"
+??? question "Beispiel Übergabewerte"
 
     ```json
     {
@@ -40,7 +40,7 @@ Dieser Endpoint erstellt einen neuen Manga in der Datenbank. Dazu benötigt der 
     }
     ```
 
-??? example "Beispiel Rückgabewert"
+??? success "Beispiel Rückgabewert"
 
     Bei Erfolg ist der Rückgabewert `1`. Sollte das erstellen jedoch nicht funktioniert haben, ist der Rückgabewert `0`. Dies kann daran liegen, dass der Benutzer nicht angemeldet ist oder
     nicht über administrator Rechte verfügt.
@@ -51,7 +51,7 @@ Dieser Endpoint erstellt einen neuen Manga in der Datenbank. Dazu benötigt der 
 
 Dieser Endpoint gibt alle Listen, die der User besitzt als JSON zurück. Alle Attribute der Liste werden in der Reihenfolge `id, name, private, user_id` zurückgegeben.
 
-??? example "Beispiel Rückgabewerte"
+??? success "Beispiel Rückgabewerte"
 
     ```json
     [
@@ -83,7 +83,7 @@ Dieser Endpoint gibt alle Listen, die der User besitzt als JSON zurück. Alle At
 Dieser Endpunkt erstellt eine neue List für den Benutzer. Der aktuelle Benutzer wird über den Session-Cookie übergeben. De weiteren muss ein Name für die Liste in JSON Format
 übergeben werden.
 
-??? example "Beispiel Übergabewerte"
+??? question "Beispiel Übergabewerte"
     
     ```json
     {
@@ -91,7 +91,7 @@ Dieser Endpunkt erstellt eine neue List für den Benutzer. Der aktuelle Benutzer
     }
     ```
 
-??? example "Beispiel Rückgabewerte"
+??? success "Beispiel Rückgabewerte"
 
     Bei Erfolg ist der Rückgabewert `1`. Sollte das erstellen jedoch nicht funktioniert haben, ist der Rückgabewert `0`. Dies kann daran liegen, dass der Benutzer nicht angemeldet ist oder
     bereits eine Liste mit dem Namen existiert.
@@ -103,7 +103,7 @@ Dieser Endpunkt erstellt eine neue List für den Benutzer. Der aktuelle Benutzer
 Dieser Endpunkt gibt alle Mangas, die der Benutzer in sämtlichen Listen hat zurück, wobei das Format der JSON Antwort `manga_list_id, manga_name, manga_current_chapter` ist.
 Der Benutzer wird über den Session-Cookie ermittelt.
 
-??? example "Beispiel Rückgabewerte"
+??? success "Beispiel Rückgabewerte"
 
     ```json
     [
@@ -126,7 +126,7 @@ Der Benutzer wird über den Session-Cookie ermittelt.
 
 Dieser Endpoint setzt den Session-Cookie des Benutzers, wenn dieser passenden Anmeldedaten übergibt.
 
-??? example "Beispiel Übergabewerte"
+??? question "Beispiel Übergabewerte"
     
     ```json
     {
@@ -134,7 +134,7 @@ Dieser Endpoint setzt den Session-Cookie des Benutzers, wenn dieser passenden An
     "password": "root"
     }
     ```
-??? example "Beispiel Rückgabewerte"
+??? success "Beispiel Rückgabewerte"
 
     ```json
     {
@@ -154,7 +154,7 @@ Dieser Endpoint entfernt den Session-Cookie vom Nutzer. Es gibt keinen Rückgabe
 
 Dieser Endpoint fügt einen Manga einer Liste des Benutzers hinzu.
 
-??? example "Beispiel Übergabewerte"
+??? question "Beispiel Übergabewerte"
 
     ```json
     {
@@ -163,7 +163,7 @@ Dieser Endpoint fügt einen Manga einer Liste des Benutzers hinzu.
     }
     ```
 
-??? example "Beispiel Rückgabewerte"
+??? success "Beispiel Rückgabewerte"
 
     Bei Erfolg ist der Rückgabewert `1`. Sollte das hinzufügen jedoch nicht funktioniert haben, ist der Rückgabewert `0`. Dies kann daran liegen, dass der Benutzer nicht angemeldet ist, ihm
     die Liste nicht gehört, der Manga oder die Liste nicht existiert.
@@ -174,7 +174,7 @@ Dieser Endpoint fügt einen Manga einer Liste des Benutzers hinzu.
 
 Dieser Endpoint kann das gespeicherter aktuelle Kapitel eines Mangas bearbeiten. Dies funktioniert nur bei Listen, die dem Benutzer gehören.
 
-??? example "Beispiel Übergabewerte"
+??? question "Beispiel Übergabewerte"
 
     ```json
     {
@@ -183,7 +183,7 @@ Dieser Endpoint kann das gespeicherter aktuelle Kapitel eines Mangas bearbeiten.
     }
     ```
 
-??? example "Beispiel Rückgabewerte"
+??? success "Beispiel Rückgabewerte"
 
     Bei Erfolg ist der Rückgabewert `1`. Sollte das bearbeiten jedoch nicht funktioniert haben, ist der Rückgabewert `0`. Dies kann daran liegen, dass der Benutzer nicht angemeldet ist, ihm
     die Liste nicht gehört oder dieser Manga nicht auf der Liste existiert.
@@ -194,14 +194,14 @@ Dieser Endpoint kann das gespeicherter aktuelle Kapitel eines Mangas bearbeiten.
 
 Dieser Endpunkt gibt alle Mangas aus eine spezifische Benutzerliste mit dem Format `id, name, private, current_chapter` zurück.
 
-??? example "Beispiel Übergabewerte"
+??? question "Beispiel Übergabewerte"
 
     ```json
     {
       "id": 1
     }
     ```
-??? example "Beispiel Rückgabewerte"
+??? success "Beispiel Rückgabewerte"
     
     ```json
     [
@@ -226,7 +226,7 @@ Dieser Endpunkt gibt alle Mangas aus eine spezifische Benutzerliste mit dem Form
 
 Dieser Endpunkt ist zum Ändern der Kapitel zahl eines Mangas. Für diese Aktion werden administrator Rechte benötigt.
 
-??? example "Beispiel Übergabewerte"
+??? question "Beispiel Übergabewerte"
 
     ```json
     {
@@ -235,7 +235,7 @@ Dieser Endpunkt ist zum Ändern der Kapitel zahl eines Mangas. Für diese Aktion
     }
     ```
 
-??? example "Beispiel Rückgabewerte"
+??? success "Beispiel Rückgabewerte"
 
     Bei Erfolg ist der Rückgabewert `1`. Sollte das bearbeiten jedoch nicht funktioniert haben, ist der Rückgabewert `0`. Dies kann daran liegen, dass der Benutzer nicht angemeldet ist oder
     keine administrator Rechte besitzt.
@@ -246,7 +246,7 @@ Dieser Endpunkt ist zum Ändern der Kapitel zahl eines Mangas. Für diese Aktion
 
 Dieser Endpunkt dient der Erstellung eines neuen Accounts in der Datenbank.
 
-??? example "Beispiel Übergabewerte"
+??? question "Beispiel Übergabewerte"
 
     ```json
     {
@@ -255,7 +255,7 @@ Dieser Endpunkt dient der Erstellung eines neuen Accounts in der Datenbank.
     }
     ```
 
-??? example "Beispiel Rückgabewerte"
+??? success "Beispiel Rückgabewerte"
 
     Bei Erfolg ist der Rückgabewert `1`. Sollte das erstellen des Benutzers jedoch nicht funktioniert haben, ist der Rückgabewert `0`. 
     Dies kann daran liegen, dass bereits ein Nutzer mit dem Name existiert.
