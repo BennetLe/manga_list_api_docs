@@ -1,7 +1,7 @@
-Ich habe zuerst damit begonnen, mir grob zu überlegen, was ich für das Projekt brauche. Meine Ziele waren es die Liste von verschiedenen Endgeräten wie z.B. einem Handy, Laptop
-und PC erreichbar zu machen, weshalb ich eine Weboberfläche mit einer API nutzen wollte. Danach habe ich begonnen, eine simple Verbindung zwischen Rust und meiner Datenbank herzustellen.
-Dazu habe ich zu nächst eine Demo geschrieben, mit der es nur möglich war eine Tabelle auszugeben und Daten einzugeben. Diese waren vordefiniert und der Code war alles in allem 
-nicht übersichtlich.
+Ich habe zunächst damit begonnen, grob festzulegen, was für das Projekt erforderlich ist.  
+Mein Ziel war es, die Liste von verschiedenen Endgeräten wie z.B. einem Handy, Laptop und PC erreichbar zu machen. Daher habe ich mich für die Nutzung einer Weboberfläche mit einer API entschieden.  
+Anschließend habe ich begonnen, eine simple Verbindung zwischen Rust und meiner Datenbank herzustellen.
+Dazu habe ich zunächst eine Demo geschrieben, mit der es nur möglich war, eine einzige Tabelle aus- und Daten einzugeben. Die Eingabemöglichkeiten waren vordefiniert und der Code alles in allem unübersichtlich.
 
 ??? example "Demo Ausgeben"
 
@@ -38,7 +38,7 @@ nicht übersichtlich.
     }
     ```
 
-Zu diesem Zeitpunkt habe ich noch nicht die Platzhalter von mysql genutzt, was meinen Code sehr unübersichtlich gemacht hat. Dies habe ich jedoch in der Aktuellsten version der
+Zu diesem Zeitpunkt habe ich noch nicht die Platzhalter von mysql genutzt, was meinen Code sehr unübersichtlich gemacht hat. Dies habe ich jedoch in der aktuellsten Version der
 API bereits eingebaut.
 
 ??? example "Ausgeben"
@@ -74,18 +74,17 @@ API bereits eingebaut.
     }
     ```
 
-Danach habe ich mir mit einem Use Case Diagramm überlegt, welche Funktionen, oder in meinem Fall API Endpoints ich benötige, um alle Anforderung die ich an das Programm hatte zu
-erfüllen.
+Vor Beginn der eigentlichen Programmierung habe ich ein Use-Case-Diagramm erstellt, dass Funktionen, oder in meinem Fall, API-Endpoints erfasst, die für ein funktionstüchtiges Programm erforderlich sind.
 
 ![Use Case](img/MangaList%20Use%20Case.png)
 
-Einige der Features sind in der fertigen Version nicht genau so implementiert (keine System Console, Admins können noch keine benutzer Löschen). Dies wurde aus Zeitmangel nicht 
-Priorisiert, soll aber noch implementiert werden.
+Einige der Features sind in der fertigen Version nicht exakt wie im Diagramm dargestellt implementiert (keine System-Console, Admins können noch keine Benutzer löschen). Dies wurde aus Zeitmangel nicht 
+priorisiert, soll aber noch implementiert werden.
 
-Zu den Funktionen im Use Case Diagramm habe ich dann die passenden SQL Befehle erstellt. Diese habe ich dann in meiner API implementiert und mit Postman getestet. Dazu habe ich 
-ein paar testfälle durchgeführt
+Zu den Funktionen im Use-Case-Diagramm habe ich die passenden SQL Befehle erstellt. Diese habe ich anschließend in meiner API implementiert und mit Postman getestet. Dazu habe ich 
+einige Testfälle durchgeführt.
 
-| API Request                      | Data provided                         | Antwort                                                  | Andere entscheidende Faktoren                   |
+| API Request                      | Übergebene Daten                      | Antwort                                                  | Andere entscheidende Faktoren                   |
 |----------------------------------|---------------------------------------|----------------------------------------------------------|-------------------------------------------------|
 | 127.0.0.1:8080/api/User/create   | "name": "abc", "password": "password" | 0                                                        | Nicht als Admin angemeldet                      |
 | 127.0.0.1:8080/api/User/login    | "name" : "test", "password": "test"   | {"success":true}                                         | Account existiert                               |
@@ -94,5 +93,5 @@ ein paar testfälle durchgeführt
 | 127.0.0.1:8080/api/MangaList/all |                                       | []                                                       | Keine Listen auf auf dem Account test vorhanden |
 
 
-Solche Testfälle habe ich für jeden API Endpoint mehrfach durchgeführt, um sicherzustellen, dass alles funktioniert und auch bei z.B. einem fehlenden Cookie kein Fehler kommt. Führ 
-fehlende Attribute in der Request habe ich jedoch noch nichts eingerichtet und Rocket gibt dabei die standard Seite für den Error Code 400 oder 422 zurück.
+Solche Testfälle habe ich für jeden API-Endpoint mehrfach durchgeführt, um sicherzustellen, dass alles funktioniert und auch bei z.B. einem fehlenden Cookie kein Fehler auftritt. Für 
+fehlende Attribute in der Request habe ich jedoch noch keine Rückgabe eingerichtet. Die library Rocket gibt dabei die Standard-Webseite für den Error-Code 400 oder 422 zurück.

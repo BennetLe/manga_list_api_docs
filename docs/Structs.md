@@ -1,4 +1,5 @@
-In Rust werden statt Klassen Structs verwendet. Dabei handelt es sich um Klassen die keine Methoden besitzen. Das bedeutet, dass ein Struct der Bauplan für das Speichern von Daten
+In Rust werden statt Klassen Structs verwendet. Dabei handelt es sich um Klassen, die keine Methoden besitzen.  
+Das bedeutet, dass ein Struct der Bauplan für das Speichern von Daten
 ist. Deshalb habe ich für jede der Tabellen in der Datenbank und alle Rückgabewerte der API ein Struct erstellt.
 
 ??? note "Implementierung eines Struct für `user`"
@@ -12,9 +13,10 @@ ist. Deshalb habe ich für jede der Tabellen in der Datenbank und alle Rückgabe
     }
     ```
 
-Bei einem Struct kann genau wie in einer Java Klasse angegeben werde ob dieser public oder nicht sein soll. Da ich für meine Structs extra Dateien angelegt habe, sind bei mir alle 
-Structs und zugehörige Attribute public. Einige der von mir Implementierten structs sind sehr kurz und könnten daher auch weggelassen werden, jedoch wollte ich der Übersicht halber
-für diese simplen Dinge auch Vorlagen erstellen.
+Bei einem Struct kann genau wie in einer Java-Klasse angegeben werden, ob dieser `public` oder `private`.  
+Da ich für meine Structs eigene Dateien angelegt habe, sind bei mir alle Structs und zugehörige Attribute public.  
+Einige der von mir implementierten Structs sind sehr kurz und könnten daher auch weggelassen werden. Ich wollte jedoch der besseren Übersicht wegen auch
+für einfache Datensätze Vorlagen erstellen.
 
 ---
 

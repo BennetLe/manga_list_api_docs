@@ -1,11 +1,11 @@
-Diese Seite beinhaltet die Dokumentation für alle API Endpoints. Dazu gehört die URL, die Request art, die zu übergebene JSON und der Rückgabewert. Das Format für jeden der API Endpoints ist
-127.0.0.1:8080/api/`Link`
+Diese Seite beinhaltet die Dokumentation für alle API Endpoints. Dazu gehört die URL, die Art der Request, die zu übergebende JSON und der Rückgabewert. Das Format für jeden der API Endpoints ist
+`127.0.0.1:8080/api/[Link]`
 
 ---
 
 ### GET `Manga/all`
 
-Dieser Endpoint gibt alle Mangas, die in der Datenbank sind als JSON zurück. Es werden alle Attribute der Manga in der 
+Dieser Endpoint gibt alle Mangas, die in der Datenbank sind als JSON zurück. Es werden alle Attribute der Mangas in der 
 Reihenfolge `id, name, chapters, finished, no_updates` zurückgegeben.
     
 
@@ -28,7 +28,7 @@ Reihenfolge `id, name, chapters, finished, no_updates` zurückgegeben.
 
 ### POST `Manga`
 
-Dieser Endpoint erstellt einen neuen Manga in der Datenbank. Dazu benötigt der ausführende Benutzer administrator Rechte. Diese werden bei der Anfrage durch den Session-Cookie
+Dieser Endpoint erstellt einen neuen Manga in der Datenbank. Dazu benötigt der ausführende Benutzer Administrator-Rechte. Diese werden bei der Anfrage durch den Session-Cookie
 überprüft.
 
 ??? question "Beispiel Übergabewerte"
@@ -42,8 +42,9 @@ Dieser Endpoint erstellt einen neuen Manga in der Datenbank. Dazu benötigt der 
 
 ??? success "Beispiel Rückgabewert"
 
-    Bei Erfolg ist der Rückgabewert `1`. Sollte das erstellen jedoch nicht funktioniert haben, ist der Rückgabewert `0`. Dies kann daran liegen, dass der Benutzer nicht angemeldet ist oder
-    nicht über administrator Rechte verfügt.
+    Bei Erfolg ist der Rückgabewert `1`. Sollte das Erstellen jedoch nicht funktioniert haben, ist der Rückgabewert `0`.   
+    Dies kann daran liegen, dass der Benutzer nicht angemeldet ist oder
+    nicht über Administrator-Rechte verfügt.
 
 ---
 
@@ -80,7 +81,7 @@ Dieser Endpoint gibt alle Listen, die der User besitzt als JSON zurück. Alle At
 
 ### POST `UserList`
 
-Dieser Endpunkt erstellt eine neue List für den Benutzer. Der aktuelle Benutzer wird über den Session-Cookie übergeben. De weiteren muss ein Name für die Liste in JSON Format
+Dieser Endpunkt erstellt eine neue Liste für den Benutzer. Der aktuelle Benutzer wird über den Session-Cookie übergeben. Des Weiteren muss ein Name für die Liste in JSON Format
 übergeben werden.
 
 ??? question "Beispiel Übergabewerte"
@@ -124,7 +125,7 @@ Der Benutzer wird über den Session-Cookie ermittelt.
 
 ### POST `/User/login`
 
-Dieser Endpoint setzt den Session-Cookie des Benutzers, wenn dieser passenden Anmeldedaten übergibt.
+Dieser Endpoint setzt den Session-Cookie des Benutzers, wenn dieser passende Anmeldedaten übergibt.
 
 ??? question "Beispiel Übergabewerte"
     
@@ -146,13 +147,13 @@ Dieser Endpoint setzt den Session-Cookie des Benutzers, wenn dieser passenden An
 
 ### POST `User/logout`
 
-Dieser Endpoint entfernt den Session-Cookie vom Nutzer. Es gibt keinen Rückgabewert.
+Dieser Endpoint entfernt den Session-Cookie des Nutzers. Es gibt keinen Rückgabewert.
 
 ---
 
 ### POST `UserList/add`
 
-Dieser Endpoint fügt einen Manga einer Liste des Benutzers hinzu.
+Dieser Endpoint fügt einer Liste des Benutzers einen Manga hinzu.
 
 ??? question "Beispiel Übergabewerte"
 
@@ -165,14 +166,15 @@ Dieser Endpoint fügt einen Manga einer Liste des Benutzers hinzu.
 
 ??? success "Beispiel Rückgabewerte"
 
-    Bei Erfolg ist der Rückgabewert `1`. Sollte das hinzufügen jedoch nicht funktioniert haben, ist der Rückgabewert `0`. Dies kann daran liegen, dass der Benutzer nicht angemeldet ist, ihm
-    die Liste nicht gehört, der Manga oder die Liste nicht existiert.
+    Bei Erfolg ist der Rückgabewert `1`. Sollte das Hinzufügen jedoch nicht funktioniert haben, ist der Rückgabewert `0`. Dies kann daran liegen, dass der Benutzer nicht angemeldet ist, ihm
+    die Liste nicht gehört oder der Manga oder die Liste nicht existiert.
 
 ---
 
 ### POST `UserList/update`
 
-Dieser Endpoint kann das gespeicherter aktuelle Kapitel eines Mangas bearbeiten. Dies funktioniert nur bei Listen, die dem Benutzer gehören.
+Dieser Endpoint kann Informationen über das zuletzt gelesene Kapitel eines Mangas in einer Liste bearbeiten.  
+Dies funktioniert nur bei Listen, die dem Benutzer auch gehören.
 
 ??? question "Beispiel Übergabewerte"
 
@@ -224,7 +226,8 @@ Dieser Endpunkt gibt alle Mangas aus eine spezifische Benutzerliste mit dem Form
 
 ### POST `Manga/update/chapter`
 
-Dieser Endpunkt ist zum Ändern der Kapitel zahl eines Mangas. Für diese Aktion werden administrator Rechte benötigt.
+Dieser Endpunkt ist zum Ändern der Anzahl der Kapitel eines Mangas gedacht.  
+Für diese Aktion werden Administrator-Rechte benötigt.
 
 ??? question "Beispiel Übergabewerte"
 
@@ -237,8 +240,8 @@ Dieser Endpunkt ist zum Ändern der Kapitel zahl eines Mangas. Für diese Aktion
 
 ??? success "Beispiel Rückgabewerte"
 
-    Bei Erfolg ist der Rückgabewert `1`. Sollte das bearbeiten jedoch nicht funktioniert haben, ist der Rückgabewert `0`. Dies kann daran liegen, dass der Benutzer nicht angemeldet ist oder
-    keine administrator Rechte besitzt.
+    Bei Erfolg ist der Rückgabewert `1`. Sollte das Bearbeiten jedoch nicht funktioniert haben, ist der Rückgabewert `0`. Dies kann daran liegen, dass der Benutzer nicht angemeldet ist oder
+    keine Administrator-Rechte besitzt.
 
 ---
 
@@ -257,5 +260,5 @@ Dieser Endpunkt dient der Erstellung eines neuen Accounts in der Datenbank.
 
 ??? success "Beispiel Rückgabewerte"
 
-    Bei Erfolg ist der Rückgabewert `1`. Sollte das erstellen des Benutzers jedoch nicht funktioniert haben, ist der Rückgabewert `0`. 
+    Bei Erfolg ist der Rückgabewert `1`. Sollte das Erstellen eines neuen Accounts jedoch nicht funktioniert haben, ist der Rückgabewert `0`.  
     Dies kann daran liegen, dass bereits ein Nutzer mit dem Name existiert.
