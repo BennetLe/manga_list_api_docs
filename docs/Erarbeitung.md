@@ -74,3 +74,25 @@ API bereits eingebaut.
     }
     ```
 
+Danach habe ich mir mit einem Use Case Diagramm überlegt, welche Funktionen, oder in meinem Fall API Endpoints ich benötige, um alle Anforderung die ich an das Programm hatte zu
+erfüllen.
+
+![Use Case](img/MangaList%20Use%20Case.png)
+
+Einige der Features sind in der fertigen Version nicht genau so implementiert (keine System Console, Admins können noch keine benutzer Löschen). Dies wurde aus Zeitmangel nicht 
+Priorisiert, soll aber noch implementiert werden.
+
+Zu den Funktionen im Use Case Diagramm habe ich dann die passenden SQL Befehle erstellt. Diese habe ich dann in meiner API implementiert und mit Postman getestet. Dazu habe ich 
+ein paar testfälle durchgeführt
+
+| API Request                      | Data provided                         | Antwort                                                  | Andere entscheidende Faktoren                   |
+|----------------------------------|---------------------------------------|----------------------------------------------------------|-------------------------------------------------|
+| 127.0.0.1:8080/api/User/create   | "name": "abc", "password": "password" | 0                                                        | Nicht als Admin angemeldet                      |
+| 127.0.0.1:8080/api/User/login    | "name" : "test", "password": "test"   | {"success":true}                                         | Account existiert                               |
+| 127.0.0.1:8080/api/User/logout   |                                       | 1                                                        |                                                 |
+| 127.0.0.1:8080/api/Manga/all     |                                       | [[1,"test",100,false,false],[2,"example",1,false,false]] |                                                 |
+| 127.0.0.1:8080/api/MangaList/all |                                       | []                                                       | Keine Listen auf auf dem Account test vorhanden |
+
+
+Solche Testfälle habe ich für jeden API Endpoint mehrfach durchgeführt, um sicherzustellen, dass alles funktioniert und auch bei z.B. einem fehlenden Cookie kein Fehler kommt. Führ 
+fehlende Attribute in der Request habe ich jedoch noch nichts eingerichtet und Rocket gibt dabei die standard Seite für den Error Code 400 oder 422 zurück.
