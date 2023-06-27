@@ -15,6 +15,9 @@ gespeichert wird. Das hier erstellte Backend verfügt noch nicht über eine für
 
 ## Zukünftige Funktionen
 
+Die folgenden Punkte sind ihrer derzeitigen Priorität nach sortiert 
+
+- Passwörter als Hash speichern
 - Die DELETE Endpoints wurden aus Zeitmangel noch nicht erstellt
 - Alle Rückgaben sollen standardisiert werden umd den Umgang mit der API zu vereinfachen
 - Ein Python Script soll jede Stunde die Manga auf neue Kapitel überprüfen und in der Datenbank aktualisieren
