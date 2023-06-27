@@ -6,4 +6,4 @@ Dadurch ist jeder Zugriff auf die Datenbank limitiert. Um das Projekt selber nut
 
 ### Aufbau der Datenbank
 
-![img.png](img/img.png)
+![Datenbank](img/img.png)
