@@ -9,6 +9,8 @@ nav:
   - 'Database.md'
   - 'Structs.md'
   - 'Herangehensweise.md'
+  - 'Projektziele.md'
+  - 'Code.md'
 
 theme:
     features:
